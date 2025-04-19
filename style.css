@@ -1,3 +1,4 @@
+/* default styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,39 +6,23 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body styles: background, color, and overflow */
 body {
-    background: linear-gradient(135deg, #dbeafe, #93c5fd);
+    background: linear-gradient(135deg, #dbeafe, #93c5fd); /* Gradient background */
     color: #1e293b;
-    overflow-x: hidden;
-    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Full screen height */
 }
 
+/* Navigation styles */
 nav {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
     padding: 0 2rem;
-    background-color: #333;
+    background-color: #333; /* Dark background */
     padding: 10px 0;
 }
 
-.navinnerDiv { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.navinnerDiv a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.navinnerDiv a:hover {
-    color: #ff9800;
-}
-
+/* Inner navigation structure */
 .navinnerDiv {
     display: flex;
     justify-content: space-between;
@@ -46,11 +31,22 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
 }
-.navinnerDiv a:hover {
-    color: #ff9800;
+
+/* Links inside nav */
+.navinnerDiv a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
+
+/* Hover effect for links */
+.navinnerDiv a:hover {
+    color: #ff9800; /* Change color on hover */
+}
+
+/* Hover effect for navigation title */
 nav h3 {
-    cursor: pointer;
+    cursor: pointer; /* Pointer cursor on hover */
     transition: color 0.3s ease;
     margin: 0;
     padding: 0 15px;
@@ -58,24 +54,25 @@ nav h3 {
 }
 
 nav h3:hover {
-    color: #facc15;
+    color: #facc15; /* Change color on hover */
 }
 
-/* Alert box */
+/* Alert box styles */
 .custom-alert {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #f87171;
+    background: #f87171; /* Red background */
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    animation: slideDown 0.4s ease forwards;
+    z-index: 999; /* Above all other elements */
+    animation: slideDown 0.4s ease forwards; /* Slide down animation */
 }
 
+/* Slide down animation */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -87,6 +84,7 @@ nav h3:hover {
     }
 }
 
+/* Close button inside alert */
 .custom-alert button {
     background: none;
     border: none;
@@ -96,26 +94,29 @@ nav h3:hover {
     font-weight: bold;
 }
 
+/* Dashboard section styles */
 .FullDashboard {
     padding: 2rem;
 }
 
 .Dashboard {
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Box shadow effect */
     max-width: 1200px;
     width: 100%;
     overflow: hidden;
 }
 
+/* Dashboard heading styles */
 .DashboardHead h1 {
     font-size: 2rem;
     padding: 1rem;
-    background-color: #3b82f6;
+    background-color: #3b82f6; /* Blue background */
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
+/* Layout for half the dashboard */
 .halfDashboard {
     display: flex;
     flex-wrap: wrap;
@@ -124,20 +125,23 @@ nav h3:hover {
     justify-content: space-between;
 }
 
+/* Left side of the dashboard (half) */
 .halfLeftDashboard {
     flex: 1 1 300px;
     background: #f1f5f9;
     border-radius: 15px;
     padding: 1rem;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Inset shadow */
 }
 
+/* Input label styling */
 .halfLeftDashboard label {
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
+/* Input field styling */
 .halfLeftDashboard input {
     width: 100%;
     padding: 0.5rem;
@@ -147,12 +151,13 @@ nav h3:hover {
     margin-bottom: 1rem;
 }
 
+/* Recent searches container */
 .recentSearchesDiv {
     margin-bottom: 1rem;
 }
 
-.searchBtn,
-.locationBtn {
+/* Button styles for search and location */
+.searchBtn, .locationBtn {
     display: inline-block;
     width: 100%;
     padding: 0.7rem;
@@ -160,30 +165,35 @@ nav h3:hover {
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease; /* Smooth background transition */
 }
 
+/* Search button hover effect */
 .searchBtn:hover {
-    background-color: #2563eb;
+    background-color: #2563eb; /* Blue color on hover */
 }
 
+/* Location button styles */
 .locationBtn {
-    background-color: #334155;
+    background-color: #334155; /* Dark grey */
     color: white;
 }
 
+/* Location button hover effect */
 .locationBtn:hover {
-    background-color: #1e293b;
+    background-color: #1e293b; /* Darker grey */
 }
 
+/* Right side of the dashboard (half) */
 .halfRightDashboard {
     flex: 2 1 600px;
     background: white;
     border-radius: 15px;
     padding: 1rem;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Inset shadow */
 }
 
+/* City info display container */
 .cityInfoDiv {
     display: flex;
     justify-content: space-between;
@@ -192,26 +202,31 @@ nav h3:hover {
     flex-wrap: wrap;
 }
 
+/* Weather details heading styles */
 #weatherDetails h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #334155;
 }
 
+/* Weather details subheading styles */
 #weatherDetails h3 {
     margin: 0.3rem 0;
 }
 
+/* Weather icon animation */
 #weatherIcon img {
     animation: float 3s ease-in-out infinite;
 }
 
+/* Floating animation for weather icon */
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
 
+/* Day 5 forecast section */
 .Day5 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -219,6 +234,7 @@ nav h3:hover {
     text-align: center;
 }
 
+/* Layout for 5-day forecast */
 .fiveDiv {
     display: flex;
     gap: 1rem;
@@ -226,25 +242,28 @@ nav h3:hover {
     justify-content: center;
 }
 
+/* Styling for individual day blocks in forecast */
 .fiveDivsDiv {
-    background: #dbeafe;
+    background: #dbeafe; /* Light blue */
     border-radius: 15px;
     padding: 1rem;
     width: 180px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Box shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
+/* Hover effect for forecast blocks */
 .fiveDivsDiv:hover {
-    transform: scale(1.05);
-    background-color: #bfdbfe;
+    transform: scale(1.05); /* Slightly enlarge */
+    background-color: #bfdbfe; /* Change background color */
 }
 
+/* Heading for each day in the forecast */
 .fiveDivsDiv h3 {
     margin: 0.5rem 0;
 }
 
-/* Loader (optional if implemented) */
+/* Loader styles (if needed) */
 .loader {
     display: none;
     position: fixed;
@@ -254,30 +273,31 @@ nav h3:hover {
     width: 80px;
     height: 80px;
     margin: -40px 0 0 -40px;
-    border: 10px solid #93c5fd;
-    border-top: 10px solid #3b82f6;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    border: 10px solid #93c5fd; /* Light blue border */
+    border-top: 10px solid #3b82f6; /* Dark blue border */
+    border-radius: 50%; /* Circular loader */
+    animation: spin 1s linear infinite; /* Infinite spin */
 }
 
+/* Loader spin animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive */
+/* Responsive layout for smaller screens */
 @media (max-width: 768px) {
     .halfDashboard {
-        flex-direction: column;
+        flex-direction: column; /* Stack items vertically */
     }
     .fiveDivsDiv {
-        width: 100%;
+        width: 100%; /* Full width for forecast blocks */
     }
 }
 
-/* Base Fluid Typography */
+/* Fluid typography for better readability on various screen sizes */
 html {
-    font-size: 16px;
+    font-size: 16px; /* Base font size */
 }
 
 @media (max-width: 1200px) {
@@ -304,7 +324,7 @@ html {
     }
 }
 
-/* Advanced Tablet Responsiveness (iPad Mini ~768px) */
+/* Responsive layout for tablets (e.g., iPad Mini) */
 @media (max-width: 820px) {
     .navinnerDiv {
         flex-direction: column;
@@ -335,7 +355,7 @@ html {
     }
 }
 
-/* Advanced Mobile Responsiveness (iPhone SE ~375px) */
+/* Mobile responsiveness for iPhone SE */
 @media (max-width: 480px) {
     nav h3 {
         font-size: 1rem;
@@ -386,6 +406,7 @@ html {
         padding: 0.75rem 1.2rem;
         font-size: 0.9rem;
     }
+
     .loader {
         width: 60px;
         height: 60px;
@@ -393,7 +414,7 @@ html {
     }
 }
 
-/* Ultra Wide Screens */
+/* Ultra-wide screens layout */
 @media (min-width: 1440px) {
     .Dashboard {
         max-width: 1400px;
