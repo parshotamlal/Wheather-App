@@ -176,4 +176,5 @@ function showAlert(message) {
     }, (error) => {
       console.error(`Error Code = ${error.code} - ${error.message}`);
     });
+  
   }
