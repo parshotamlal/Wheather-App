@@ -19,7 +19,7 @@ nav {
     padding: 10px 0;
 }
 
-.navinnerDiv {
+.navinnerDiv { 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -272,5 +272,134 @@ nav h3:hover {
     }
     .fiveDivsDiv {
         width: 100%;
+    }
+}
+
+/* Base Fluid Typography */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+/* Advanced Tablet Responsiveness (iPad Mini ~768px) */
+@media (max-width: 820px) {
+    .navinnerDiv {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .halfDashboard {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .halfLeftDashboard,
+    .halfRightDashboard {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .fiveDivsDiv {
+        width: 48%;
+        padding: 1rem;
+    }
+
+    #weatherDetails h1 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Advanced Mobile Responsiveness (iPhone SE ~375px) */
+@media (max-width: 480px) {
+    nav h3 {
+        font-size: 1rem;
+    }
+
+    .DashboardHead h1 {
+        font-size: 1.25rem;
+        padding: 0.8rem;
+    }
+
+    .halfLeftDashboard input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .searchBtn,
+    .locationBtn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .cityInfoDiv {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    #weatherDetails h1 {
+        font-size: 1.1rem;
+    }
+
+    .fiveDivsDiv {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .Day5 {
+        font-size: 1.2rem;
+    }
+
+    .navinnerDiv a {
+        font-size: 0.95rem;
+    }
+
+    .custom-alert {
+        right: 10px;
+        top: 10px;
+        padding: 0.75rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .loader {
+        width: 60px;
+        height: 60px;
+        border-width: 8px;
+    }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 1440px) {
+    .Dashboard {
+        max-width: 1400px;
+    }
+
+    .fiveDivsDiv {
+        width: 160px;
     }
 }
