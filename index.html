@@ -1,11 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheather App</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="icon" href="https://tse1.mm.bing.net/th?id=OIP.EoEt3ZcWpaXqQRLcg-6aQQHaHt&pid=Api&P=0&h=180"
+            type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        <!-- Font Awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
 <body>
-    
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="navinnerDiv">
+            <h3>Weather App</h3>
+            <h3>Home</h3>
+            <h3><a href="About.html">About </a></h3>
+        </div>
+    </nav>
+
+    <!-- Alert -->
+    <div id="customAlert" class="custom-alert">
+        <span id="alertMessage"></span>
+        <button id="closeAlert" onclick="closeAlert()">Close</button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader"></div>
+
+    <!-- Full Dashboard -->
+    <div class="FullDashboard">
+
+        <div class="Dashboard">
+
+            <div class="DashboardHead">
+                <h1>Weather Dashboard</h1>
+            </div>
+
+            <div class="halfDashboard">
+
+                <!-- Left Side -->
+                <div class="halfLeftDashboard">
+                    <label for="cityName">Enter a City Name</label>
+                    <input type="text" autocomplete="off" id="inputEl" placeholder="E.g., New York,London,Tokyo">
+                    <div class="recentSearchesDiv">
+                        <i class="fa-regular cross fa-circle-xmark"></i>
+                        <div class="recentSearches">
+                        </div>
+                    </div>
+
+                    <div class="halfLeftDashboardbtnCenter">
+                        <button class="searchBtn" onclick="FetchData()">Search</button>
+                        <p>or</p>
+                        <button class="locationBtn" onclick="fetchLocation()">Use Current Location</button>
+                    </div>
+                </div>
+
+                <!-- Right Side -->
+                <div class="halfRightDashboard">
+
+                    <div class="cityInfoDiv">
+                        <div id="weatherDetails">
+                            <h1 id="cityName">Nagpur(16/03/2025 06:00:00 Am)</h1>
+                            <h3 id="temp"><i class="fa-solid fa-temperature-high"></i> Temperature <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+                        <div id="weatherIcon">
+                            <img src="WeatherImages/storm.png" id="imgEl" alt="weather-icon">
+                            <p id="iconDesc"></p>
+                        </div>
+                    </div>
+
+                    <div class="Day5">5 Day Forecast</div>
+
+                    <div class="fiveDiv">
+
+                        <!-- Forecast Cards -->
+                        <div class="fiveDiv1 fiveDivsDiv">
+                            <h1 id="Date6">( 2025-03-16 )</h1>
+                            <div class="weatherIconClass">
+                                <img src="WeatherImages/storm.png" class="imgElClass6" alt="">
+                                <p class="iconDescClass6"></p>
+                            </div>
+                            <h3 id="temp6"><i class="fa-solid fa-temperature-high"></i> Temp <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind6"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity6"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+
+                        <div class="fiveDiv2 fiveDivsDiv">
+                            <h1 id="Date14">( 2025-03-16 )</h1>
+                            <div class="weatherIconClass">
+                                <img src="WeatherImages/storm.png" class="imgElClass14" alt="">
+                                <p class="iconDescClass14"></p>
+                            </div>
+                            <h3 id="temp14"><i class="fa-solid fa-temperature-high"></i> Temp <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind14"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity14"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+
+                        <div class="fiveDiv3 fiveDivsDiv">
+                            <h1 id="Date22">( 2025-03-16 )</h1>
+                            <div class="weatherIconClass">
+                                <img src="WeatherImages/storm.png" class="imgElClass22" alt="">
+                                <p class="iconDescClass22"></p>
+                            </div>
+                            <h3 id="temp22"><i class="fa-solid fa-temperature-high"></i> Temp <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind22"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity22"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+
+                        <div class="fiveDiv4 fiveDivsDiv">
+                            <h1 id="Date30">( 2025-03-16 )</h1>
+                            <div class="weatherIconClass">
+                                <img src="WeatherImages/storm.png" class="imgElClass30" alt="">
+                                <p class="iconDescClass30"></p>
+                            </div>
+                            <h3 id="temp30"><i class="fa-solid fa-temperature-high"></i> Temp <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind30"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity30"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+
+                        <div class="fiveDiv5 fiveDivsDiv">
+                            <h1 id="Date38">( 2025-03-16 )</h1>
+                            <div class="weatherIconClass">
+                                <img src="WeatherImages/storm.png" class="imgElClass38" alt="">
+                                <p class="iconDescClass38"></p>
+                            </div>
+                            <h3 id="temp38"><i class="fa-solid fa-temperature-high"></i> Temp <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
+                            <h3 id="Wind38"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
+                            <h3 id="humidity38"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
 </body>
+<script src="app.js"></script>
 </html>

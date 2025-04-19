@@ -1,3 +1,2 @@
-# Whea
-wheather App
+#wheather App
  
