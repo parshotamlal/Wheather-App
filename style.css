@@ -247,7 +247,7 @@ nav h3:hover {
 
 /* Styling for individual day blocks in forecast */
 .fiveDivsDiv {
-    background: #dbeafe; /* Light blue */
+    background: #dbeafe;
     border-radius: 15px;
     padding: 1rem;
     width: 180px;
@@ -266,7 +266,7 @@ nav h3:hover {
     margin: 0.5rem 0;
 }
 
-/* Loader styles (if needed) */
+/* Loader styles */
 .loader {
     display: none;
     position: fixed;
@@ -300,7 +300,7 @@ nav h3:hover {
 
 /* Fluid typography for better readability on various screen sizes */
 html {
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 @media (max-width: 1200px) {
@@ -327,7 +327,7 @@ html {
     }
 }
 
-/* Responsive layout for tablets (e.g., iPad Mini) */
+/*  for tablets (iPad Mini) */
 @media (max-width: 820px) {
     .navinnerDiv {
         flex-direction: column;
@@ -358,7 +358,8 @@ html {
     }
 }
 
-/* Mobile responsiveness for iPhone SE */
+/*  for iPhone SE */
+
 @media (max-width: 480px) {
     nav h3 {
         font-size: 1rem;
@@ -422,7 +423,7 @@ html {
     .Dashboard {
         max-width: 1400px;
     }
-
+    
     .fiveDivsDiv {
         width: 160px;
     }
