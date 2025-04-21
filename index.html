@@ -5,10 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Parshotam - Weather Application Developer">
         <title>Weather App</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="icon" href="https://tse1.mm.bing.net/th?id=OIP.EoEt3ZcWpaXqQRLcg-6aQQHaHt&pid=Api&P=0&h=180"
-            type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
+
+     <!-- Importing Tailwind CSS via CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- Favicon for the website -->
+<link rel="icon" href="https://tse1.mm.bing.net/th?id=OIP.EoEt3ZcWpaXqQRLcg-6aQQHaHt&pid=Api&P=0&h=180" type="image/x-icon">
+
+<!-- Link to external CSS file for custom styles -->
+<link rel="stylesheet" href="style.css">
+
         <!-- Font Awesome cdn -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -44,35 +50,45 @@
 
             <div class="halfDashboard">
 
-                <!-- Left Side -->
+              <!-- Left section of the dashboard for user input -->
                 <div class="halfLeftDashboard">
+                      <!-- Label for city input field -->
                     <label for="cityName">Enter a City Name</label>
-                    <input type="text" autocomplete="off" id="inputEl" placeholder="E.g., New York,London,Tokyo">
+                      <!-- Input field for entering the city name -->
+                    <input type="text" autocomplete="off" id="inputEl" placeholder="E.g.,jammu,delhi,srinagar">
+                        <!-- Section for displaying recent searches -->
                     <div class="recentSearchesDiv">
+                        <!-- Icon to clear recent search (cross icon) -->
+
                         <i class="fa-regular cross fa-circle-xmark"></i>
                         <div class="recentSearches">
                         </div>
                     </div>
-
+                <!-- Button section for search and location features -->
                     <div class="halfLeftDashboardbtnCenter">
+                           <!-- Search button that triggers the FetchData function on click -->
                         <button class="searchBtn" onclick="FetchData()">Search</button>
                         <p>or</p>
+                         <!-- Button to use the current location, triggering the fetchLocation function on click -->
                         <button class="locationBtn" onclick="fetchLocation()">Use Current Location</button>
                     </div>
                 </div>
 
                 <!-- Right Side -->
                 <div class="halfRightDashboard">
-
+    <!-- Container for city weather details -->
                     <div class="cityInfoDiv">
+                           <!-- Div that holds the weather details like city name, temperature, wind speed, and humidity -->
                         <div id="weatherDetails">
                             <h1 id="cityName">Nagpur(16/03/2025 06:00:00 Am)</h1>
                             <h3 id="temp"><i class="fa-solid fa-temperature-high"></i> Temperature <i class="fa-solid fa-arrow-right"></i> 31 C°</h3>
                             <h3 id="Wind"><i class="fa-solid fa-fan"></i> Wind <i class="fa-solid fa-arrow-right"></i> 2.8m/s</h3>
                             <h3 id="humidity"><i class="fa-solid fa-droplet"></i> Humidity <i class="fa-solid fa-arrow-right"></i> 88%</h3>
-                        </div>
+                        </div> 
+                        <!-- Image representing the current weather condition (e.g., storm) -->
                         <div id="weatherIcon">
-                            <img src="WeatherImages/storm.png" id="imgEl" alt="weather-icon">
+                            <img src="storm.png" id="imgEl" alt="weather-icon">
+
                             <p id="iconDesc"></p>
                         </div>
                     </div>
