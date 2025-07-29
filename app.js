@@ -6,7 +6,7 @@ function showAlert(message) {
     customAlert.style.display = 'flex'; // Display the alert
   }
   
-  // Function to close the custom alert
+  // Function to close the custom alerts
   function closeAlert() {
     const customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'none';
